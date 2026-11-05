@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#162b36">
+  <title>Vota · Aula de Capacidades</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body class="vote-body">
+  <main class="vote-shell">
+    <header class="vote-header"><div class="eyebrow">AULA DE CAPACIDADES</div><div class="vote-brand">¿Pobreza o falta de libertad?</div><div class="vote-room">Sala <span id="room-code">—</span></div></header>
+    <section id="vote-content" class="vote-content"><div class="waiting-card"><div class="loader-dot"></div><h1>Conectando con la clase…</h1><p class="muted">Un momento, por favor.</p></div></section>
+    <footer class="vote-footer">Tu voto es anónimo en esta actividad. El equipo expositor controla el avance.</footer>
+  </main>
+  <script src="/vote.js"></script>
+</body>
+</html>

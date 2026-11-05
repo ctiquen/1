@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cabina de presentadores · Aula de Capacidades</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div id="app" class="app-shell hidden">
+    <header class="topbar">
+      <div><div class="eyebrow">PRESENTACIÓN INTERACTIVA</div><div class="brand">¿Pobreza o falta de libertad?</div></div>
+      <div class="topbar-meta"><span id="connection-label" class="status-dot">Conectando…</span><span class="room-pill">Sala <b id="room-label">—</b></span></div>
+    </header>
+
+    <main class="presenter-grid">
+      <section class="stage-column">
+        <div class="stage-meta"><span id="phase-label" class="phase-label">PANTALLA INICIAL</span><span id="round-label" class="round-label">Preparación</span></div>
+        <article id="stage" class="stage-card">
+          <div class="stage-kicker">DINÁMICA DE CLASE</div>
+          <h1>¿Pobreza o falta de libertad?</h1>
+          <h2>El desafío de construir una sociedad con capacidades</h2>
+          <p>Seis situaciones. Tres decisiones posibles. Una pregunta de fondo: ¿qué significa realmente superar la pobreza?</p>
+          <div class="stage-rule">Cuando el equipo esté listo, pulsa <b>Iniciar presentación</b>. Después abre cada votación.</div>
+        </article>
+        <div class="stage-footer"><span id="speaker-label">Equipo expositor</span><span id="slide-counter">—</span></div>
+      </section>
+
+      <aside class="control-column">
+        <section class="control-card">
+          <div class="section-heading"><div><div class="eyebrow">MANDO DE LA ACTIVIDAD</div><h2>Control de ronda</h2></div><span class="live-chip"><i></i> EN VIVO</span></div>
+          <div class="control-buttons">
+            <button id="start-btn" class="btn btn-primary" disabled>Iniciar presentación</button>
+            <button id="open-btn" class="btn btn-primary" disabled>Abrir votación</button>
+            <button id="close-btn" class="btn btn-dark" disabled>Cerrar votación</button>
+            <button id="explain-btn" class="btn btn-secondary" disabled>Mostrar explicación</button>
+            <button id="next-btn" class="btn btn-primary" disabled>Siguiente ronda →</button>
+            <button id="restart-btn" class="btn btn-quiet">Reiniciar actividad</button>
+          </div>
+          <p id="control-hint" class="tiny muted">Inicia la presentación para habilitar los controles.</p>
+        </section>
+
+        <section class="control-card vote-monitor">
+          <div class="section-heading"><div><div class="eyebrow">RESPUESTAS DEL PÚBLICO</div><h2>Votación en vivo</h2></div><div class="participant-count"><strong id="online-count">0</strong><span>conectados</span></div></div>
+          <div class="vote-total"><strong id="vote-total">0</strong><span>votos registrados</span></div>
+          <div id="live-bars" class="live-bars"><p class="muted tiny">Las barras aparecerán cuando se abra la votación.</p></div>
+          <p class="tiny muted">Cada dispositivo cuenta un voto. Los participantes pueden cambiar su respuesta mientras la votación siga abierta.</p>
+        </section>
+
+        <section class="control-card speaker-card">
+          <div class="eyebrow">APOYO PARA EXPONER</div><h2>Guía del integrante</h2>
+          <div id="speaker-notes" class="speaker-notes">Aquí aparecerá la guía del expositor para cada ronda.</div>
+          <div id="time-chip" class="time-chip">30 minutos · 6 integrantes</div>
+        </section>
+      </aside>
+    </main>
+    <footer class="app-footer">Aula de Capacidades · El equipo controla el ritmo; el público participa desde su celular.</footer>
+  </div>
+  <script src="/presenter.js"></script>
+</body>
+</html>
