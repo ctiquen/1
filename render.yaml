@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: aula-capacidades
+    runtime: node
+    plan: free
+    region: ohio
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ROOM_CODE
+        value: AULA2026
+      - key: PRESENTER_PIN
+        value: "2468"
